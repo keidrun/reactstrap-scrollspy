@@ -1,0 +1,90 @@
+{
+  "name": "reactstrap-scrollspy",
+  "version": "0.0.0",
+  "main": "./lib/index.js",
+  "files": [
+    "README.md",
+    "lib/",
+    "package.json"
+  ],
+  "description": "Scrollspy library for Reactstrap to create an automatically update navigation easily and flexibly.",
+  "repository": "https://github.com/keidrun/reactstrap-scrollspy.git",
+  "author": "keidrun",
+  "license": "MIT",
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn flow check && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx}": [
+      "yarn eslint",
+      "git add"
+    ]
+  },
+  "scripts": {
+    "start": "live-server dist",
+    "dev": "webpack-dev-server --open --mode development",
+    "test": "yarn eslint",
+    "eslint": "eslint --fix 'src/**/*.js'",
+    "build": "webpack --mode production",
+    "package": "babel ./src/components/lib --out-dir ./lib"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-waypoint": "^9.0.2",
+    "reactstrap": "^8.0.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.5.5",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.2.0",
+    "eslint": "^6.3.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.2.0",
+    "eslint-loader": "^3.0.0",
+    "eslint-plugin-flowtype": "^4.3.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "flow-bin": "^0.106.3",
+    "flow-typed": "^2.6.1",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^3.0.5",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.2.5",
+    "live-server": "^1.2.1",
+    "mini-css-extract-plugin": "^0.8.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "prettier": "^1.18.2",
+    "style-loader": "^1.0.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0"
+  },
+  "peerDependencies": {
+    "react-waypoint": ">=9.0.2"
+  },
+  "keywords": [
+    "scrollspy",
+    "scroll",
+    "bootstrap",
+    "reactstrap",
+    "react",
+    "react-component",
+    "component"
+  ]
+}

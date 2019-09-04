@@ -1,0 +1,19 @@
+[ignore]
+.*/node_modules/.*
+.*/flow-typed/.*
+.*/public/.*
+.*\.(test|spec)\.js
+.*/webpack.config\.js
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+module.system.node.resolve_dirname=node_modules
+module.system.node.resolve_dirname=src
+suppress_comment= \\(.\\|\n\\)*\\$FlowIgnore
+
+[strict]
