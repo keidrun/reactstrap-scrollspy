@@ -9,7 +9,7 @@ script:
   - yarn test
 
 before_deploy:
-  - yarn build
+  - yarn package
 
 deploy:
   provider: npm
