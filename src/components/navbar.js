@@ -16,7 +16,7 @@ function Navbar({ updateNavLinkName, updateNavbar }: Props) {
 
   return (
     <ReactstrapNavbar expand="md" fixed="top" className="navbar-dark bg-dark">
-      <a href="/" className="text-warning" style={{ textDecoration: 'none' }}>
+      <a href="/reactstrap-scrollspy/" className="text-warning" style={{ textDecoration: 'none' }}>
         <h3>Reactstrap Scrollspy Demo</h3>
       </a>
 

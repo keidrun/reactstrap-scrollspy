@@ -28,7 +28,8 @@
     "test": "yarn eslint",
     "eslint": "eslint --fix 'src/**/*.js'",
     "build": "webpack --mode production",
-    "package": "babel ./src/components/lib --out-dir ./lib"
+    "package": "babel ./src/components/lib --out-dir ./lib",
+    "deploy": "bash update_demo.sh"
   },
   "dependencies": {
     "bootstrap": "^4.3.1",

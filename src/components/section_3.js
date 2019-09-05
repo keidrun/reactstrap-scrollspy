@@ -7,7 +7,9 @@ function Section3() {
       <div className="container">
         <div className="row">
           <div className="col text-center">
-            <h2>Section 3</h2>
+            <h2>
+              Section 3 <i className="em em---1" />
+            </h2>
           </div>
         </div>
       </div>
