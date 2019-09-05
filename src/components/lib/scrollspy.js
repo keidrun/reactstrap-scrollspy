@@ -16,10 +16,21 @@ type Props = {
 
 const Scrollspy = ({ navLinkNames, navIndex, homeIndex, topOffset, bottomOffset, delayMs, children }: Props) => {
   const [activeName, setActiveName] = useState(navLinkNames[homeIndex])
+  const [isClicked, setIsClicked] = useState(false)
 
-  const changeActiveName = name => setActiveName(name)
+  const changeActiveName = name => {
+    if (!isClicked) {
+      setActiveName(name)
+    }
+  }
 
-  const changeActiveNameLazily = name => setTimeout(() => setActiveName(name), delayMs)
+  const changeActiveNameLazily = name => {
+    setIsClicked(true)
+    setTimeout(() => {
+      setActiveName(name)
+      setIsClicked(false)
+    }, delayMs)
+  }
 
   return (
     <>
