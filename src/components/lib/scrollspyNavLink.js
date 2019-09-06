@@ -1,12 +1,12 @@
 // @flow
 import React from 'react'
-import type { Children } from 'react'
+import type { Node } from 'react'
 
 type Props = {
   name: string,
   updatedName: string,
   updateNavbar: Function,
-  children: Children,
+  children: Node,
 }
 
 const ScrollspyNavLink = ({ name, updatedName, updateNavbar, children }: Props) => (
