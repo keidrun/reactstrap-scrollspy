@@ -5,7 +5,7 @@ import type { Node } from 'react'
 import InView from './inView'
 
 type Props = {
-  navLinkNames: Array<string | null>,
+  names: Array<string | null>,
   navIndex?: number,
   homeIndex?: number,
   topOffset?: string | number,
@@ -14,8 +14,8 @@ type Props = {
   children: Node,
 }
 
-const Scrollspy = ({ navLinkNames, navIndex, homeIndex, topOffset, bottomOffset, delayMs, children }: Props) => {
-  const [activeName, setActiveName] = useState(navLinkNames[homeIndex])
+const Scrollspy = ({ names, navIndex, homeIndex, topOffset, bottomOffset, delayMs, children }: Props) => {
+  const [activeName, setActiveName] = useState(names[homeIndex])
   const [isClicked, setIsClicked] = useState(false)
 
   const changeActiveName = name => {
@@ -35,19 +35,19 @@ const Scrollspy = ({ navLinkNames, navIndex, homeIndex, topOffset, bottomOffset,
   return (
     <>
       {children.map((component, index) => {
-        if (navLinkNames[index] === null) {
+        if (names[index] === null) {
           return component
         }
         if (index === navIndex) {
           return (
             <InView
-              key={navLinkNames[index]}
-              onEnter={() => changeActiveName(navLinkNames[index])}
+              key={names[index]}
+              onEnter={() => changeActiveName(names[index])}
               topOffset={topOffset}
               bottomOffset={bottomOffset}
             >
               {React.cloneElement(component, {
-                updateNavLinkName: `${activeName}`,
+                updatedName: `${activeName}`,
                 updateNavbar: changeActiveNameLazily,
               })}
             </InView>
@@ -55,8 +55,8 @@ const Scrollspy = ({ navLinkNames, navIndex, homeIndex, topOffset, bottomOffset,
         }
         return (
           <InView
-            key={navLinkNames[index]}
-            onEnter={() => changeActiveName(navLinkNames[index])}
+            key={names[index]}
+            onEnter={() => changeActiveName(names[index])}
             topOffset={topOffset}
             bottomOffset={bottomOffset}
           >
@@ -73,7 +73,7 @@ Scrollspy.defaultProps = {
   homeIndex: 0,
   topOffset: '50%',
   bottomOffset: '40%',
-  delayMs: 10,
+  delayMs: 50,
 }
 
 export default Scrollspy

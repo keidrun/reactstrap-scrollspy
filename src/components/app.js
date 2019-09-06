@@ -13,11 +13,7 @@ import Footer from './footer'
 function App() {
   return (
     <>
-      <Scrollspy
-        navLinkNames={['nav', 'header', 'section-1', 'section-2', 'section-3', null]}
-        navIndex={0}
-        homeIndex={1}
-      >
+      <Scrollspy names={['nav', 'header', 'section-1', 'section-2', 'section-3', null]} navIndex={0} homeIndex={1}>
         <Navbar />
         <Header />
         <Section1 />

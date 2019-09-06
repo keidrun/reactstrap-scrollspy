@@ -5,11 +5,11 @@ import { Collapse, Navbar as ReactstrapNavbar, NavbarToggler, Nav, NavItem, NavL
 import { ScrollspyNavLink } from './lib'
 
 type Props = {
-  updateNavLinkName?: string,
+  updatedName?: string,
   updateNavbar?: Function,
 }
 
-function Navbar({ updateNavLinkName, updateNavbar }: Props) {
+function Navbar({ updatedName, updateNavbar }: Props) {
   const [collapsed, setCollapsed] = useState(true)
 
   const toggleNavbar = () => setCollapsed(!collapsed)
@@ -27,22 +27,22 @@ function Navbar({ updateNavLinkName, updateNavbar }: Props) {
       <Collapse isOpen={!collapsed} navbar>
         <Nav navbar className="ml-auto" style={{ fontSize: '1.4rem' }}>
           <NavItem>
-            <ScrollspyNavLink navLinkName="header" updateNavLinkName={updateNavLinkName} updateNavbar={updateNavbar}>
+            <ScrollspyNavLink name="header" updatedName={updatedName} updateNavbar={updateNavbar}>
               <NavLink href="#header">Home</NavLink>
             </ScrollspyNavLink>
           </NavItem>
           <NavItem>
-            <ScrollspyNavLink navLinkName="section-1" updateNavLinkName={updateNavLinkName} updateNavbar={updateNavbar}>
+            <ScrollspyNavLink name="section-1" updatedName={updatedName} updateNavbar={updateNavbar}>
               <NavLink href="#section-1">Section1</NavLink>
             </ScrollspyNavLink>
           </NavItem>
           <NavItem>
-            <ScrollspyNavLink navLinkName="section-2" updateNavLinkName={updateNavLinkName} updateNavbar={updateNavbar}>
+            <ScrollspyNavLink name="section-2" updatedName={updatedName} updateNavbar={updateNavbar}>
               <NavLink href="#section-2">Section2</NavLink>
             </ScrollspyNavLink>
           </NavItem>
           <NavItem>
-            <ScrollspyNavLink navLinkName="section-3" updateNavLinkName={updateNavLinkName} updateNavbar={updateNavbar}>
+            <ScrollspyNavLink name="section-3" updatedName={updatedName} updateNavbar={updateNavbar}>
               <NavLink href="#section-3">Section3</NavLink>
             </ScrollspyNavLink>
           </NavItem>
@@ -53,7 +53,7 @@ function Navbar({ updateNavLinkName, updateNavbar }: Props) {
 }
 
 Navbar.defaultProps = {
-  updateNavLinkName: undefined,
+  updatedName: undefined,
   updateNavbar: undefined,
 }
 
