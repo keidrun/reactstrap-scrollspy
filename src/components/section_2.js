@@ -7,7 +7,7 @@ function Section2() {
     <section
       id="section-2"
       className="d-flex align-items-center"
-      style={{ backgroundColor: '#555', paddingTop: 50, paddingBottom: 50 }}
+      style={{ backgroundColor: '#555', marginTop: '-2rem', paddingTop: '5rem', paddingBottom: '3rem' }}
     >
       <div className="container">
         <div className="row">

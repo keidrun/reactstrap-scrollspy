@@ -66,7 +66,7 @@ import { Scrollspy } from 'reactstrap-scrollspy'
 function App() {
   return (
     <>
-      <Scrollspy names={['nav', 'header', 'section-1', 'section-2', 'section-3', null]} navIndex={0} homeIndex={1}>
+      <Scrollspy names={['navbar', 'header', 'section-1', 'section-2', 'section-3', null]} navIndex={0} homeIndex={1}>
         <Navbar />
         <Header />
         <Section1 />
@@ -92,7 +92,7 @@ type Props = {
   name: string,
   updatedName: string,
   updateNavbar: Function,
-  children: Children,
+  children: Node,
 }
 ```
 

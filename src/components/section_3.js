@@ -12,19 +12,19 @@ function Section3() {
               Flow Types <i className="em em-gem" /> Default Props
             </h2>
             <div className="row">
-              <div className="col-4 text-center my-5 px-3">
+              <div className="col-4 text-center my-5 px-4">
                 <h3>Scrollspy Type</h3>
                 <div>
                   <Gist id="bf6c3af105b8b0a6c3b830e35d8aae07" file="Scrollspy_props.js" />
                 </div>
               </div>
-              <div className="col-4 text-center my-5 px-3">
+              <div className="col-4 text-center my-5 px-4">
                 <h3>Scrollspy Default Props</h3>
                 <div>
                   <Gist id="bf6c3af105b8b0a6c3b830e35d8aae07" file="Scrollspy_default.js" />
                 </div>
               </div>
-              <div className="col-4 text-center my-5 px-6">
+              <div className="col-4 text-center my-5 px-4">
                 <h3>ScrollspyNavLink Type</h3>
                 <div>
                   <Gist id="bf6c3af105b8b0a6c3b830e35d8aae07" file="ScrollspyNavLink_props.js" />
