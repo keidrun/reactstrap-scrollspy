@@ -113,9 +113,9 @@ type Props = {
 function Navbar({ updatedName, updateNavbar }: Props) {
   ...
   return (
-    <ReactstrapNavbar expand="md" fixed="top" className="navbar-dark bg-dark">
+    <ReactstrapNavbar expand="md" fixed="top" className="...">
       ...
-        <Nav navbar className="ml-auto" style={{ fontSize: '1.4rem' }}>
+        <Nav navbar className="...">
           <NavItem>
             <ScrollspyNavLink name="header" updatedName={updatedName} updateNavbar={updateNavbar}>
               <NavLink href="#header">Home</NavLink>

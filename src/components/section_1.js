@@ -2,12 +2,19 @@
 import React from 'react'
 import Gist from 'react-gist'
 
+import useResize from './hooks/useResize'
+
 function Section1() {
+  const { height, width } = useResize()
+
   return (
-    <section id="section-1" className="d-flex align-items-center" style={{ backgroundColor: '#ccc', height: '100vh' }}>
-      <div className="container">
-        <div className="row">
-          <div className="col text-center">
+    <section id="section-1">
+      <div
+        className={`container-flud d-flex align-items-center  justify-content-center ${height}`}
+        style={{ backgroundColor: '#ccc' }}
+      >
+        <div className={`row ${width}`}>
+          <div className="col-sm-12 text-center my-5">
             <h2>
               Step 1: Wrap your components in Scrollspy <i className="em em-100" />
             </h2>
