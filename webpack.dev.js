@@ -8,7 +8,7 @@ const outputPath = path.resolve(__dirname, 'dist')
 
 export default {
   mode: 'development',
-  entry: './src/index.js',
+  entry: ['@babel/polyfill', './src/index.js'],
   output: {
     filename: '[name].[hash].js',
     path: outputPath,
