@@ -16,11 +16,11 @@ function Section3() {
         <div className="row">
           <div className="col text-center my-5">
             <h2 className="mb-4">
-              Flow Types <i className="em em-gem" /> Default Props
+              Flow Type <i className="em em-gem" /> Default Props
             </h2>
             <div className="row">
               <div className="col-sm-4 text-center px-4">
-                <h3>Scrollspy Type</h3>
+                <h3>Scrollspy Props</h3>
                 <div>
                   <Gist id="bf6c3af105b8b0a6c3b830e35d8aae07" file="Scrollspy_props.js" />
                 </div>
@@ -32,7 +32,7 @@ function Section3() {
                 </div>
               </div>
               <div className="col-sm-4 text-center px-4">
-                <h3>ScrollspyNavLink Type</h3>
+                <h3>ScrollspyNavLink Props</h3>
                 <div>
                   <Gist id="bf6c3af105b8b0a6c3b830e35d8aae07" file="ScrollspyNavLink_props.js" />
                 </div>

@@ -4,12 +4,7 @@ import { Collapse, Navbar as ReactstrapNavbar, NavbarToggler, Nav, NavItem, NavL
 
 import { ScrollspyNavLink } from './lib'
 
-type Props = {
-  updatedName?: string,
-  updateNavbar?: Function,
-}
-
-function Navbar({ updatedName, updateNavbar }: Props) {
+function Navbar() {
   const [collapsed, setCollapsed] = useState(true)
 
   const toggleNavbar = () => setCollapsed(!collapsed)
@@ -27,22 +22,22 @@ function Navbar({ updatedName, updateNavbar }: Props) {
       <Collapse isOpen={!collapsed} navbar>
         <Nav navbar className="ml-auto" style={{ fontSize: '1.4rem' }}>
           <NavItem>
-            <ScrollspyNavLink name="header" updatedName={updatedName} updateNavbar={updateNavbar}>
+            <ScrollspyNavLink name="header">
               <NavLink href="#header">Home</NavLink>
             </ScrollspyNavLink>
           </NavItem>
           <NavItem>
-            <ScrollspyNavLink name="section-1" updatedName={updatedName} updateNavbar={updateNavbar}>
+            <ScrollspyNavLink name="section-1">
               <NavLink href="#section-1">Section1</NavLink>
             </ScrollspyNavLink>
           </NavItem>
           <NavItem>
-            <ScrollspyNavLink name="section-2" updatedName={updatedName} updateNavbar={updateNavbar}>
+            <ScrollspyNavLink name="section-2">
               <NavLink href="#section-2">Section2</NavLink>
             </ScrollspyNavLink>
           </NavItem>
           <NavItem>
-            <ScrollspyNavLink name="section-3" updatedName={updatedName} updateNavbar={updateNavbar}>
+            <ScrollspyNavLink name="section-3">
               <NavLink href="#section-3">Section3</NavLink>
             </ScrollspyNavLink>
           </NavItem>
@@ -50,11 +45,6 @@ function Navbar({ updatedName, updateNavbar }: Props) {
       </Collapse>
     </ReactstrapNavbar>
   )
-}
-
-Navbar.defaultProps = {
-  updatedName: undefined,
-  updateNavbar: undefined,
 }
 
 export default Navbar

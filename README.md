@@ -26,19 +26,18 @@ This library provides `Scrollspy` and `ScrollspyNavLink` components.
 
 ### Scrollspy
 
-You should wrap your components in `Scrollspy`. This has mainly 3 props, which are `navLinkNames`, `navIndex` and `homeIndex`. `navLinkNames` is used to identify each component wrapped by this, so you should give appropriate names' list that arranged in order. Then, `navIndex` is an index number to identify `Navbar` and `homeIndex` is also an index number to identify home component such as `Header`.
+You should wrap your components in `Scrollspy`. This has mainly two props, which are `names` and `homeIndex`. `names` is used to identify each component wrapped by this, so you should give unique names' list that arranged in order. Then, `homeIndex` is an index number to identify home component such as `Header`.
 
 #### Flow Type
 
 ```javascript
 type Props = {
   names: Array<string | null>,
-  navIndex?: number,
   homeIndex?: number,
   topOffset?: string | number,
   bottomOffset?: string | number,
   delayMs?: number,
-  children: Node,
+  children: ChildrenArray<any>,
 }
 ```
 
@@ -46,7 +45,6 @@ type Props = {
 
 ```javascript
 Scrollspy.defaultProps = {
-  navIndex: 0,
   homeIndex: 0,
   topOffset: '50%',
   bottomOffset: '40%',
@@ -66,7 +64,10 @@ import { Scrollspy } from 'reactstrap-scrollspy'
 function App() {
   return (
     <>
-      <Scrollspy names={['navbar', 'header', 'section-1', 'section-2', 'section-3', null]} navIndex={0} homeIndex={1}>
+      <Scrollspy
+        names={['navbar', 'header', 'section-1', 'section-2', 'section-3', null]}
+        homeIndex={1}
+      >
         <Navbar />
         <Header />
         <Section1 />
@@ -83,16 +84,14 @@ export default App
 
 ### ScrollspyNavLink
 
-You should wrap `NavLink` provided by `reactstrap` in `ScrollspyNavLink`. This has 3 props, which are `navLinkName`, `updateNavLinkName` and `updateNavbar`. `navLinkName` is used to identify a `NavLink`. `updateNavLinkName` and `updateNavbar` are used to update a navigation then they are passed from a parent component which is `Scrollspy` automatically so you should pass them to this.
+You should wrap `NavLink` provided by `reactstrap` in `ScrollspyNavLink`. This has an one prop, which is `name`. `name` is used to identify a `NavLink` and notify `Scrollspy` of it automatically.
 
 #### Flow Type
 
 ```javascript
 type Props = {
   name: string,
-  updatedName: string,
-  updateNavbar: Function,
-  children: Node,
+  children: Element<any>,
 }
 ```
 
@@ -105,34 +104,29 @@ import { Collapse, Navbar as ReactstrapNavbar, NavbarToggler, Nav, NavItem, NavL
 
 import { ScrollspyNavLink } from 'reactstrap-scrollspy'
 
-type Props = {
-  updatedName?: string,
-  updateNavbar?: Function,
-}
-
-function Navbar({ updatedName, updateNavbar }: Props) {
+function Navbar() {
   ...
   return (
     <ReactstrapNavbar expand="md" fixed="top" className="...">
       ...
         <Nav navbar className="...">
           <NavItem>
-            <ScrollspyNavLink name="header" updatedName={updatedName} updateNavbar={updateNavbar}>
+            <ScrollspyNavLink name="header">
               <NavLink href="#header">Home</NavLink>
             </ScrollspyNavLink>
           </NavItem>
           <NavItem>
-            <ScrollspyNavLink name="section-1" updatedName={updatedName} updateNavbar={updateNavbar}>
+            <ScrollspyNavLink name="section-1">
               <NavLink href="#section-1">Section1</NavLink>
             </ScrollspyNavLink>
           </NavItem>
           <NavItem>
-            <ScrollspyNavLink name="section-2" updatedName={updatedName} updateNavbar={updateNavbar}>
+            <ScrollspyNavLink name="section-2">
               <NavLink href="#section-2">Section2</NavLink>
             </ScrollspyNavLink>
           </NavItem>
           <NavItem>
-            <ScrollspyNavLink name="section-3" updatedName={updatedName} updateNavbar={updateNavbar}>
+            <ScrollspyNavLink name="section-3">
               <NavLink href="#section-3">Section3</NavLink>
             </ScrollspyNavLink>
           </NavItem>
@@ -140,11 +134,6 @@ function Navbar({ updatedName, updateNavbar }: Props) {
       ...
     </ReactstrapNavbar>
   )
-}
-
-Navbar.defaultProps = {
-  updatedName: undefined,
-  updateNavbar: undefined,
 }
 
 export default Navbar

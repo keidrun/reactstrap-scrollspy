@@ -13,7 +13,7 @@ import Footer from './footer'
 function App() {
   return (
     <div style={{ overflow: 'hidden' }}>
-      <Scrollspy names={['navbar', 'header', 'section-1', 'section-2', 'section-3', null]} navIndex={0} homeIndex={1}>
+      <Scrollspy names={['navbar', 'header', 'section-1', 'section-2', 'section-3', null]} homeIndex={1}>
         <Navbar />
         <Header />
         <Section1 />

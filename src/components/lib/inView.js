@@ -11,7 +11,7 @@ type Props = {
 }
 
 const InView = ({ onEnter, topOffset, bottomOffset, children }: Props) => (
-  <Waypoint onEnter={onEnter} topOffset={topOffset} bottomOffset={bottomOffset}>
+  <Waypoint data-test="component-in-view" onEnter={onEnter} topOffset={topOffset} bottomOffset={bottomOffset}>
     <div>{children}</div>
   </Waypoint>
 )

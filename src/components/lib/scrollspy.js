@@ -1,21 +1,21 @@
 // @flow
 import React, { useState } from 'react'
-import type { Node } from 'react'
-
+import type { ChildrenArray } from 'react'
 import InView from './inView'
+
+import ScrollspyContext from './scrollspyContext'
 
 type Props = {
   names: Array<string | null>,
-  navIndex?: number,
   homeIndex?: number,
   topOffset?: string | number,
   bottomOffset?: string | number,
   delayMs?: number,
-  children: Node,
+  children: ChildrenArray<any>,
 }
 
-const Scrollspy = ({ names, navIndex, homeIndex, topOffset, bottomOffset, delayMs, children }: Props) => {
-  const [activeName, setActiveName] = useState(names[homeIndex])
+const Scrollspy = ({ names, homeIndex, topOffset, bottomOffset, delayMs, children }: Props) => {
+  const [activeName, setActiveName] = useState(names[homeIndex || 0])
   const [isClicked, setIsClicked] = useState(false)
 
   const changeActiveName = name => {
@@ -33,43 +33,31 @@ const Scrollspy = ({ names, navIndex, homeIndex, topOffset, bottomOffset, delayM
   }
 
   return (
-    <>
-      {children.map((component, index) => {
-        if (names[index] === null) {
-          return component
-        }
-        if (index === navIndex) {
+    <div data-test="component-scrollspy">
+      <ScrollspyContext.Provider value={{ updatedName: activeName, updateNavbar: changeActiveNameLazily }}>
+        {children.map((component, index) => {
+          if (names[index] === null) {
+            return React.cloneElement(component, {
+              key: index,
+            })
+          }
           return (
             <InView
-              key={names[index]}
+              key={index}
               onEnter={() => changeActiveName(names[index])}
               topOffset={topOffset}
               bottomOffset={bottomOffset}
             >
-              {React.cloneElement(component, {
-                updatedName: `${activeName}`,
-                updateNavbar: changeActiveNameLazily,
-              })}
+              {component}
             </InView>
           )
-        }
-        return (
-          <InView
-            key={names[index]}
-            onEnter={() => changeActiveName(names[index])}
-            topOffset={topOffset}
-            bottomOffset={bottomOffset}
-          >
-            {component}
-          </InView>
-        )
-      })}
-    </>
+        })}
+      </ScrollspyContext.Provider>
+    </div>
   )
 }
 
 Scrollspy.defaultProps = {
-  navIndex: 0,
   homeIndex: 0,
   topOffset: '50%',
   bottomOffset: '40%',

@@ -9,7 +9,7 @@ const outputPath = path.resolve(__dirname, 'dist')
 
 export default {
   mode: 'production',
-  entry: './src/index.js',
+  entry: ['@babel/polyfill', './src/index.js'],
   output: {
     filename: '[name].[hash].js',
     path: outputPath,
@@ -52,7 +52,7 @@ export default {
       new UglifyJsPlugin({
         uglifyOptions: {
           compress: {
-            drop_console: true,
+            drop_console: false,
           },
         },
       }),

@@ -10,7 +10,8 @@
   },
   "env": {
     "browser": true,
-    "es6": true
+    "es6": true,
+    "jest": true
   },
   "rules": {
     "no-unused-vars": ["warn", { "vars": "all" }],
@@ -37,7 +38,9 @@
     ],
     "flowtype/define-flow-type": "warn",
     "flowtype/use-flow-type": "warn",
-    "import/no-extraneous-dependencies": "off"
+    "import/no-extraneous-dependencies": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/no-array-index-key": "off"
   },
   "settings": {
     "flowtype": {
