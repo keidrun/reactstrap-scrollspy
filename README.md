@@ -28,7 +28,7 @@ This library provides `Scrollspy` and `ScrollspyNavLink` components.
 
 You should wrap your components in `Scrollspy`. This has mainly two props, which are `names` and `homeIndex`. `names` is used to identify each component wrapped by this, so you should give unique names' list that arranged in order. Then, `homeIndex` is an index number to identify home component such as `Header`.
 
-#### Flow Type
+#### Props
 
 ```javascript
 type Props = {
@@ -86,7 +86,7 @@ export default App
 
 You should wrap `NavLink` provided by `reactstrap` in `ScrollspyNavLink`. This has an one prop, which is `name`. `name` is used to identify a `NavLink` and notify `Scrollspy` of it automatically.
 
-#### Flow Type
+#### Props
 
 ```javascript
 type Props = {

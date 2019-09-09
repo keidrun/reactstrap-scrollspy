@@ -52,7 +52,7 @@ export default {
       new UglifyJsPlugin({
         uglifyOptions: {
           compress: {
-            drop_console: false,
+            drop_console: true,
           },
         },
       }),
